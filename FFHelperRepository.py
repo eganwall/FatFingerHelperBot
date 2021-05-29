@@ -14,7 +14,10 @@ class Repository:
         self.logger = FFHelperUtils.LogUtility()
 
         self.client = pymongo.MongoClient(
-            "STRING_HERE".format(username, password))
+            "mongodb://{}:{}@solutiongambling-shard-00-00-vcw5b.mongodb.net:27017,"
+            "solutiongambling-shard-00-01-vcw5b.mongodb.net:27017,"
+            "solutiongambling-shard-00-02-vcw5b.mongodb.net:27017/admin?ssl=true&replicaSet=SolutionGambling-shard-0"
+            "&authSource=admin".format(username, password))
 
         self.db = self.client.ffhelper_db
 
@@ -33,7 +36,7 @@ class Repository:
         return comment
 
 class StringConstants:
-    LINK_TEMPLATE = """[Here is link number {}]({}) - Previous text "{}"
+    LINK_TEMPLATE = """[Here is link number {} - Previous text "{}"]({})
 
 """
 
@@ -44,5 +47,5 @@ I will extend those so they're easier for our sausage fingers to click!
 {}
 
 ----
-^Please ^PM ^[\/u\/eganwall](http://reddit.com/user/eganwall) ^with ^issues ^or ^feedback! ^| ^[Delete](https://reddit.com/message/compose/?to=FatFingerHelperBot&subject=delete&message=delete%20ID_HERE)
+^Please ^PM ^[\/u\/eganwall](http://reddit.com/user/eganwall) ^with ^issues ^or ^feedback! ^| ^[Code](https://github.com/eganwall/FatFingerHelperBot) ^| ^[Delete](https://reddit.com/message/compose/?to=FatFingerHelperBot&subject=delete&message=delete%20ID_HERE)
 """

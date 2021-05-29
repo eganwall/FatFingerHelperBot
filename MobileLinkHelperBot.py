@@ -16,7 +16,8 @@ username_blacklist = ['FatFingerHelperBot', 'WikiTextBot', 'DuplicatesBot', 'Aut
                       'Lapis_Mirror', 'EternalCCGFetcher', 'AlwaysPuppies', 'TSATPWTCOTTTADC', 'notist', 'NGramatical',
                       'xanalives', 'coronata', 'MarioThePumer', 'whyhahm', 'MercuryPDX', 'interrogatrix', 'Chrisfade',
                       'phiiscool', 'Mentioned_Videos', 'BlatantConservative', 'AreYouDeaf', 'Gogrammer', 'howellq',
-                      'gingerkid427', 'lambda_abstraction', 'Tigertemprr', 'mdaniel', 'anisuggest', 'Roboragi', 'ChaoticNeutralCzech']
+                      'gingerkid427', 'lambda_abstraction', 'Tigertemprr', 'mdaniel', 'anisuggest', 'Roboragi', 'ChaoticNeutralCzech',
+                      'deluseru']
 
 subreddit_blacklist = ['custommagic', 'sakuragakuin', 'ggwpLive', 'france', 'technology', 'parkinsons', 'TheMarketsofSidon']
 
@@ -85,7 +86,7 @@ while True:
                     body = str(link.string)
                     if len(body) <= 3 and body.lower() != 'www' and body.lower() != 'faq' and '(' not in address and ')' not in address and address.lower().startswith('http'):
                         links_corrected += 1
-                        curr_reply += constants.LINK_TEMPLATE.format(str(links_corrected), address, body)
+                        curr_reply += constants.LINK_TEMPLATE.format(str(links_corrected), body, address)
 
                 if len(curr_reply) > 0:
                     full_reply = constants.REPLY_TEMPLATE.format(curr_reply)
