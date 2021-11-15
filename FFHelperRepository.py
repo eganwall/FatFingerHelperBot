@@ -36,7 +36,7 @@ class Repository:
         return comment
 
 class StringConstants:
-    LINK_TEMPLATE = """[Here is link number {} - Previous text "{}"]({})
+    LINK_TEMPLATE = """#[Here is link number {} - Previous text "{}"]({})
 
 """
 
